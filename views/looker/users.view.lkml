@@ -108,6 +108,13 @@ dimension: days_since_sign_up {
   sql: DATE_DIFF(CURRENT_DATE,${created_date},day) ;;
 }
 
+  dimension: age_tier {
+    type:  tier
+    tiers: [ 18,25,35,45,55,65,75,90]
+    style: interval
+    sql: ${age}  ;;
+  }
+
 measure: count {
   type: count
   drill_fields: [id, last_name, first_name, events.count, order_items.count]
