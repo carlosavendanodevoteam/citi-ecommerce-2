@@ -100,8 +100,13 @@ dimension: fullname {
 
 dimension: is_email_source {
     type: yesno
-    sql: ${traffic_source} = "Email" ;;
+    sql: ${traffic_source} = "email" ;;
   }
+
+dimension: days_since_sign_up {
+  type:  number
+  sql: DATE_DIFF(CURRENT_DATE,${created_date},day) ;;
+}
 
 measure: count {
   type: count
