@@ -95,7 +95,7 @@ dimension: zip {
 
 dimension: fullname {
   type: string
-  sql: concat(${first_name},"",${last_name} ;;
+  sql: concat(${first_name}," ",${last_name}) ;;
 }
 
 measure: count {
