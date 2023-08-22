@@ -98,6 +98,11 @@ dimension: fullname {
   sql: concat(${first_name}," ",${last_name}) ;;
 }
 
+dimension: is_email_source {
+    type: yesno
+    sql: ${traffic_source} = "Email" ;;
+  }
+
 measure: count {
   type: count
   drill_fields: [id, last_name, first_name, events.count, order_items.count]
