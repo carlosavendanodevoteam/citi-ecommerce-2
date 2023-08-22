@@ -93,6 +93,11 @@ dimension: zip {
   sql: ${TABLE}.zip ;;
 }
 
+dimension: fullname {
+  type: string
+  sql: concat(${first_name},"",${last_name} ;;
+}
+
 measure: count {
   type: count
   drill_fields: [id, last_name, first_name, events.count, order_items.count]
