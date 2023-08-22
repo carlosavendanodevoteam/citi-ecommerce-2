@@ -111,7 +111,7 @@ dimension: days_since_sign_up {
   dimension: age_tier {
     type:  tier
     tiers: [ 18,25,35,45,55,65,75,90]
-    style: interval
+    style: integer
     sql: ${age}  ;;
   }
 
