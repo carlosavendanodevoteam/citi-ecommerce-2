@@ -130,6 +130,12 @@ measure: total_sales {
   value_format_name: usd_0
 }
 
+  measure: revenue_email_users {
+    type: sum
+    sql:  ${sale_price};;
+    filters: [users.is_email_source: "Yes"]
+  }
+
 
 # ----- Sets of fields for drilling ------
 set: detail {
