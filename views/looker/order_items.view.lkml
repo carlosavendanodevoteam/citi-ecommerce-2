@@ -136,6 +136,12 @@ measure: total_sales {
     filters: [users.is_email_source: "Yes"]
   }
 
+measure: percentage_of_revenue_email_users{
+  type : number
+  sql: ${revenue_email_users} / ${total_revenue};;
+  value_format_name: percent_2
+}
+
 
 # ----- Sets of fields for drilling ------
 set: detail {
