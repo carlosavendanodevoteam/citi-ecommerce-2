@@ -100,7 +100,7 @@ dimension: fullname {
 
 dimension: is_email_source {
     type: yesno
-    sql: ${traffic_source} = "email" ;;
+    sql: ${traffic_source} = "Email" ;;
   }
 
 dimension: days_since_sign_up {
