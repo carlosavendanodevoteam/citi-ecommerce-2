@@ -10,7 +10,6 @@ include: "/views/**/*.view.lkml"
 datagroup: carlos-training-looker_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
-  sql_trigger: SELECT max(id) FROM my_tablename ;;
 }
 
 persist_with: carlos-training-looker_default_datagroup
@@ -47,6 +46,11 @@ explore: users {
 explore: view_name {}
 
 explore: order_items {
+  join: carlos_tabla {
+    type: left_outer
+    sql_on: ${order_items.user_id} = ${carlos_tabla.user_id};;
+    relationship: many_to_one
+  }
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
