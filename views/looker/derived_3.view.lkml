@@ -7,6 +7,9 @@ view: derived_3 {
       column: user_id {}
       column: order_item_count {}
       column: total_revenue {}
+      derived_column: percentage_rev {
+        sql: sum(total_revenue) / sum(order_item_count) ;;
+      }
     }
   }
   dimension: user_id {
@@ -20,6 +23,10 @@ view: derived_3 {
   }
   dimension: total_revenue {
     description: ""
+    value_format: "$#,##0.00"
+    type: number
+  }
+  dimension: percentage_rev {
     value_format: "$#,##0.00"
     type: number
   }
