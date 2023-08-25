@@ -4,12 +4,12 @@
 view: derived_table{
   derived_table: {
     explore_source: order_items {
-      column: order_id {}
+      column: user_id {}
       column: total_revenue {}
       column: order_item_count {}
     }
   }
-  dimension: order_id {
+  dimension: user_id {
     description: ""
     primary_key: yes
     type: number
