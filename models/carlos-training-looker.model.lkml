@@ -34,6 +34,8 @@ explore: distribution_centers {}
 
 explore: orders {}
 
+explore: tabla_derivada_sql {}
+
 explore: events {}
 
 explore: users {
