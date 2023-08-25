@@ -8,6 +8,9 @@ view: carlos_tabla {
       column: user_id {}
       column: order_count {}
       column: total_revenue {}
+      derived_column: average_order_revenue {
+        sql: total_revenue / order_count ;;
+      }
     }
   }
   dimension: user_id {
@@ -16,6 +19,10 @@ view: carlos_tabla {
   }
   dimension: order_count {
     description: ""
+    type: number
+  }
+  dimension: average_order_revenue {
+    value_format: "$#,##0.00"
     type: number
   }
   dimension: total_revenue {
