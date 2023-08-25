@@ -67,4 +67,10 @@ explore: order_items {
     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
     relationship: many_to_one
   }
+
+  join: example {
+    from:  derived_table
+    sql_on: ${example.user_id} = ${order_items.user_id};;
+    relationship: many_to_one
+  }
 }
