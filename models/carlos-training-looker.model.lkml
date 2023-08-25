@@ -45,10 +45,9 @@ explore: users {
 explore: view_name {}
 
 explore: order_items {
-
-  join: derived_table {
-    type:  left_outer
-    sql_on: ${order_items.user_id} = ${derived_table.user_id};;
+  join: derived_3 {
+    type: left_outer
+    sql_on: ${order_items.user_id} = ${derived_3.user_id} ;;
     relationship: many_to_one
   }
 
